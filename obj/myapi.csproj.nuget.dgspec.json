@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/test/dotnetprojects/firstdotnetapp/myapi.csproj": {}
+    "/Users/test/Desktop/SQLSERVERPROJECT/myapi.csproj": {}
   },
   "projects": {
-    "/Users/test/dotnetprojects/firstdotnetapp/myapi.csproj": {
+    "/Users/test/Desktop/SQLSERVERPROJECT/myapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/test/dotnetprojects/firstdotnetapp/myapi.csproj",
+        "projectUniqueName": "/Users/test/Desktop/SQLSERVERPROJECT/myapi.csproj",
         "projectName": "myapi",
-        "projectPath": "/Users/test/dotnetprojects/firstdotnetapp/myapi.csproj",
+        "projectPath": "/Users/test/Desktop/SQLSERVERPROJECT/myapi.csproj",
         "packagesPath": "/Users/test/.nuget/packages/",
-        "outputPath": "/Users/test/dotnetprojects/firstdotnetapp/obj/",
+        "outputPath": "/Users/test/Desktop/SQLSERVERPROJECT/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/test/.nuget/NuGet/NuGet.Config"

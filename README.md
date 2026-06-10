@@ -1,6 +1,6 @@
-# SQLSERVERPROJECT — ASP.NET Core REST API
+# SQLSERVERPROJECT — Student LMS API
 
-A RESTful Web API built with **ASP.NET Core (.NET 10)** and **Entity Framework Core**, backed by a **PostgreSQL** database. The project follows a clean, layered architecture with auto-generated API documentation via Swagger.
+A Student Learning Management System API built with **ASP.NET Core (.NET 10)** and **Entity Framework Core**, backed by a **PostgreSQL** database. It exposes student, course, and enrollment endpoints for a simple LMS workflow.
 
 ---
 
@@ -95,6 +95,7 @@ It lists all available endpoints with request/response schemas and lets you test
 - **EF Core** is registered with the `AppDbContext` using the `DefaultConnection` string from `appsettings.json`.
 - **JSON circular reference handling** is configured via `ReferenceHandler.IgnoreCycles` to safely serialize related entities.
 - **Default route** pattern: `api/{controller}/{action}/{id?}`
+- **LMS endpoints**: `/api/students`, `/api/courses`, `/api/enrollments`
 
 ---
 

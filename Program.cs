@@ -24,9 +24,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
@@ -34,7 +35,7 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapControllerRoute(
     name: "default",
-    pattern: "api/{controller=Product}/{action=GetProducts}/{id?}");
+    pattern: "api/{controller=Students}/{action=GetStudents}/{id?}");
 
 app.Run();
 
