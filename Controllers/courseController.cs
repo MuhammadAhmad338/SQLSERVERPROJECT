@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[Route("api/[controller]")]
 [ApiController]
+[Route("api/[controller]")]
 public class CoursesController : ControllerBase
 {
     private readonly AppDbContext _context;
@@ -13,23 +13,18 @@ public class CoursesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
+    public async Task<IActionResult> Get()
     {
-        return Ok(await _context.Courses.Include(c => c.Enrollments).ToListAsync());
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Course>> GetCourse(int id)
-    {
-        var course = await _context.Courses.Include(c => c.Enrollments).FirstOrDefaultAsync(c => c.Id == id);
-        return course == null ? NotFound() : Ok(course);
+        return Ok(await _context.Courses.ToListAsync());
     }
 
     [HttpPost]
-    public async Task<ActionResult<Course>> CreateCourse(Course course)
+    public async Task<IActionResult> Create(Course course)
     {
         _context.Courses.Add(course);
+
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetCourse), new { id = course.Id }, course);
+
+        return Ok(course);
     }
 }

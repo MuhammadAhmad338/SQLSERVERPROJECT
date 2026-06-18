@@ -45,7 +45,7 @@ public class AuthController : ControllerBase
         return Ok(new AuthResponse
         {
             Message = "Signup successful.",
-            Status = true,
+            Status = true
         });
     }
 
@@ -69,12 +69,14 @@ public class AuthController : ControllerBase
             student.Role = requestedRole;
             await _context.SaveChangesAsync();
         }
+        Console.WriteLine($"Student {student.Email} logged in with role {student.Id}.");
 
         return Ok(new AuthResponse
         {
-            Message = "Login successful.",
+            Message = "Login successful",
             Status = true,
-            token = GenerateToken(student)
+            Token = GenerateToken(student),
+            StudentId = student.Id.ToString()
         });
     }
 
@@ -85,7 +87,7 @@ public class AuthController : ControllerBase
         return Convert.ToBase64String(bytes);
     }
 
-private static string GenerateToken(Student student)
+    private static string GenerateToken(Student student)
     {
         // In a real application, you would generate a JWT or similar token here.
         // For simplicity, we're just returning a placeholder string.
