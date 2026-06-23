@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[Route("api/enrollment")]
-[Route("api/enrollments")]
+[Route("api/[controller]")]
 [ApiController]
 public class EnrollmentsController : ControllerBase
 {

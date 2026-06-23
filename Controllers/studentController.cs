@@ -32,4 +32,19 @@ public class StudentsController : ControllerBase
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetStudent), new { id = student.Id }, student);
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateStudent(int id, [FromBody] StudentUpdateDto dto)
+    {
+        var student = await _context.Students.FindAsync(id);
+        if (student == null) return NotFound();
+
+        student.FullName = dto.FullName;
+        student.Department = dto.Department;
+
+        await _context.SaveChangesAsync();
+        return NoContent();
+    }
+
+    
 }

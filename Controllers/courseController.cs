@@ -27,4 +27,16 @@ public class CoursesController : ControllerBase
 
         return Ok(course);
     }
+
+    [HttpGet("{id}")]
+public async Task<ActionResult<Course>> GetCourse(int id)
+{
+    var course = await _context.Courses
+        .Include(c => c.Enrollments)
+        .FirstOrDefaultAsync(c => c.Id == id);
+
+    if (course == null) return NotFound();
+    return Ok(course);
+}
+
 }
